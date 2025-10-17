@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyseur d'Emplois du Temps</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Analyseur d'Emplois du Temps</h1>
+            <p>Uploadez un fichier PDF pour extraire, afficher et filtrer les emplois du temps.</p>
+        </header>
+
+        <div class="upload-section">
+            <input type="file" id="pdf-file-input" accept=".pdf" />
+            <label for="pdf-file-input" class="upload-button">Choisir un fichier PDF</label>
+        </div>
+
+        <div id="loader" class="hidden">Chargement et analyse du PDF...</div>
+
+        <div id="filters" class="filters-section hidden">
+            <div class="filter-group">
+                <label for="class-filter">Classes</label>
+                <select id="class-filter" multiple></select>
+            </div>
+            <div class="filter-group">
+                <label for="day-filter">Jours</label>
+                <select id="day-filter" multiple></select>
+            </div>
+            <div class="filter-group">
+                <label for="subject-filter">Matières</label>
+                <select id="subject-filter" multiple></select>
+            </div>
+            <button id="apply-filters-btn">Filtrer</button>
+        </div>
+
+        <div id="table-container">
+             <p class="initial-message">Veuillez uploader un fichier PDF pour commencer.</p>
+        </div>
+    </div>
+
+    <!-- Librairie PDF.js de Mozilla -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <!-- Notre script pour traiter le PDF -->
+    <script src="script.js"></script>
+
+</body>
+</html>
